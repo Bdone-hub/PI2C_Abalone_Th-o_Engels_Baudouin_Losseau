@@ -5,7 +5,7 @@ Pour lancer l'Ia il faut mettre dans la ligne de commande le port suivi du nom d
 
 Stratégie de l'IA:
 
-Recherche du "meilleur move" par la méthode de la version cache de la méthode negamax limitée en temps
+Recherche du "meilleur move" par la méthode de la version cache de la méthode negamax limitée en temps (timeout a 2.5 sec mais depth limité à 3 pour ne jamais depasser les 3s)
 
 La statégie utilisée est: 
 
