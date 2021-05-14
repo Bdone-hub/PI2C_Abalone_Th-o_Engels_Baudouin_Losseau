@@ -208,6 +208,7 @@ class abaloneAI:
 
 
     def negamaxWithPruningIterativeDeepening(self,board, player, timeout=2.5):
+        '''Renvoie un move selon la stratégie dans le ReadMe via la methode Negamax '''
         cache = defaultdict(lambda : 0)
         def cachedNegamaxWithPruningLimitedDepth(board, player, depth, alpha=float('-inf'), beta=float('inf')):
             over= self.gameOver(board)[0]
@@ -345,6 +346,7 @@ class abaloneAI:
 
     
     def heuristic(self,state, player):
+        ''' Attribue un score à l'etat en fonction du joueur et de la stratégie (voir ReadMe) '''
         if player==1:
             self.us = "B"
             self.enemy = "W"
