@@ -86,7 +86,7 @@ class abaloneAI:
                 print(error)
 
     def get_play(self,board,player):
-        # renvoie un mouvement "legal" pour ce faire appelle get_plays et analyse le status de la game pour savoir qui on est 
+        '''renvoie la liste des moves "legaux" pour ce faire appelle get_plays et analyse le status de la game pour savoir qui on '''
         if player==1:
             self.us = "B"
             self.enemy = "W"
@@ -97,7 +97,7 @@ class abaloneAI:
         
 
     def get_plays(self, board):
-        #crée un dictionaire avec tout les move legaux possible selon la structure {bille de base:[([bille a bouger], direction)]}
+        '''crée une liste avec tout les move legaux possible selon la structure [bille de base:[([bille a bouger], direction)]]'''
         Xline = ["X", "X", "X", "X", "X", "X", "X", "X", "X","X", "X"]
         possible_moves_move = {}
         possible_moves_kill = {}
@@ -135,7 +135,7 @@ class abaloneAI:
         return l
 
     def move_dire(self, board, marble, dire, num = 1):
-        #calcule les index de la case suivante dans la direction spécifiée
+        '''calcule les index de la case suivante dans la direction spécifiée'''
         line =  marble[0]
         row = marble[1]
         if dire == "NE":
@@ -158,7 +158,7 @@ class abaloneAI:
 
 
     def test_move(self, board, marble, dire):
-        #vérifie si la direction indiquée pour la bille indiquée permet de faire un mouvement
+        '''vérifie si la direction indiquée pour la bille indiquée permet de faire un mouvement et renvoie un move si il kill une bille adverse'''
         marbles = []
         kill = []
         chain_lenght = 1
@@ -247,7 +247,7 @@ class abaloneAI:
         return tuple(tempL)
 
     def gameOver(self,boardx):
-        '''Return True si la patie est finie'''
+        '''Return True si la patie est finie ainsi que le nombre de bille restante W puis B'''
         count_B=0
         count_W=0
         
