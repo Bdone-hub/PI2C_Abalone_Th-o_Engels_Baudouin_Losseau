@@ -10,7 +10,7 @@ import numpy
 
 class abaloneAI:
     def __init__(self,name, targetIP="localHost", port=5201):
-        #initie la premiere connexion et crée certaine variables
+        '''initie le socket et crée certaine variables'''
         s = socket.socket()
         s.connect((targetIP,3000))
         self.__s = s
@@ -32,7 +32,7 @@ class abaloneAI:
 
 
     def run(self):
-        '''Lance les differents threads, un pour gerer les demande de ping et un autre pour gerer le reste'''
+        '''Inscrit l'IA au serveur et lance la fonction d'ecoute'''
         self.__running=True
         res = json.dumps({"request": "subscribe","port": self.port,"name": self.name,"matricules": ["195367", "195093"]})
         self.__s.send(res.encode('utf8'))
@@ -86,7 +86,7 @@ class abaloneAI:
                 print(error)
 
     def get_play(self,board,player):
-        '''renvoie la liste des moves "legaux" pour ce faire appelle get_plays et analyse le status de la game pour savoir qui on '''
+        '''renvoie la liste des moves "legaux" pour ce faire appelle get_plays et analyse le status de la game pour savoir qui on est'''
         if player==1:
             self.us = "B"
             self.enemy = "W"
@@ -247,7 +247,7 @@ class abaloneAI:
         return tuple(tempL)
 
     def gameOver(self,boardx):
-        '''Return True si la patie est finie ainsi que le nombre de bille restante W puis B'''
+        '''Return True si la patie est finie ainsi que le nombre de bille restante B puis W'''
         count_B=0
         count_W=0
         
@@ -265,6 +265,7 @@ class abaloneAI:
         return (pos[0] + D[0], pos[1] + D[1])
 
     def isOnBoard(self,pos):
+        ''''vérifie si la position demandée est sur le plateau'''
         l, c = pos
         if min(pos) < 0:
             return False
@@ -284,6 +285,7 @@ class abaloneAI:
             return True
 
     def moveOneMarble(self,board, pos, direction):
+        '''modifie la plateau pour bouger une bille'''
         li, ci = pos
         ld, cd = self.addDirection(pos, direction)
         color = self.getColor(board, pos)
@@ -302,6 +304,7 @@ class abaloneAI:
         return res
 
     def moveMarblesTrain(self,board, marbles, direction):
+        '''bouge plusieurs billes'''
         if direction in ['E', 'SE', 'SW']:
             marbles = sorted(marbles, key=lambda L: -(L[0]*9+L[1]))
         else:
