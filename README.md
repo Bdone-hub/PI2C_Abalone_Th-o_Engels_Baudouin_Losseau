@@ -9,9 +9,9 @@ Recherche du "meilleur move" par la méthode de la version cache de la méthode 
 
 La statégie utilisée est: 
 
-	-resté en bloc et au centre du plateau (de moins en moisn important au fur et a mesure que la patrie avance).
-	-empècher les adversaire d'etre en bloc et au centre du plateau (de moins en moisn important au fur et a mesure que la patrie avance).
-	-Éviter de ce faire tué.
+	-rester en bloc et au centre du plateau (de moins en moins important au fur et à mesure que la partie avance).
+	-empêcher les adversaire d'etre en bloc et au centre du plateau (de moins en moins important au fur et à mesure que la partie avance).
+	-Éviter de ce faire tuer.
 	-Avoir plus de billes que l'adversaire.
 	-Apres 100 rounds, le 'centre' visé bouge aleatoirement au case adjacente au vrai centre du plateau et ce, tout les 10 tours (pour eviter de boucler).
 	-Éviter au maximum de perdre une cinqueme bille.
