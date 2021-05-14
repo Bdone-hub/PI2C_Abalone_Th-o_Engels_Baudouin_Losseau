@@ -1,7 +1,6 @@
 import socket
 import json
 import sys
-import threading
 import jsonNetwork
 from random import choice
 from collections import defaultdict
