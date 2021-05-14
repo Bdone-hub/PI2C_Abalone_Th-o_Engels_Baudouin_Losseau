@@ -1,7 +1,7 @@
 Engels Théo 195367 
 Losseau Baudouin 195093
 
-Pour lancer l'Ia il faut mettre dans la ligne de commande le port suivi du nom de l'ia, sinon le port et le nom par defaut son utilisé (5214 et 'l'IA super intelligente de Baudouin et Théo')           exemple: py /chemin/projet/abalone 4500 Paul
+Pour lancer l'Ia il faut mettre dans la ligne de commande le port suivi du nom de l'ia, sinon le port et le nom par defaut son utilisé (5214 et 'l'IA super intelligente de Baudouin et Théo')           exemple: py C:\chemin\abalone_client_Nega.py 4500 Paul
 
 Stratégie de l'IA:
 
