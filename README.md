@@ -1,6 +1,8 @@
 Engels Théo 195367 
 Losseau Baudouin 195093
 
+Pour lancer l'Ia il faut mettre dans la ligne de commande le port suivi du nom de l'ia, sinon le port est 5214 par défault           exemple: py /chemin/projet/abalone 4500 Paul
+
 Stratégie de l'IA:
 
 Recherche du "meilleur move" par la méthode de la version cache de la méthode negamax limitée en temps
